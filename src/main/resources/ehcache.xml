@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<ehcache xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation = "http://ehcache.org/ehcache.xsd" name = "movieramaApiCacheManager" updateCheck = "false">
+
+	<diskStore path = "/var/cache/api/movierama" />
+
+
+	<defaultCache																				eternal                   = "true"
+																								maxElementsInMemory       = "500"
+																								overflowToDisk            = "false"
+																								memoryStoreEvictionPolicy = "LFU" />
+
+	<!-- Standard Hibernate Caches -->
+
+	<cache name = "org.hibernate.cache.internal.StandardQueryCache"								eternal             = "false"
+																								maxElementsInMemory = "50000"
+																								timeToLiveSeconds   = "1200"
+																								overflowToDisk      = "false" />
+
+	<cache name = "org.hibernate.cache.spi.UpdateTimestampsCache"								eternal             = "false"
+																								maxElementsInMemory = "50000"
+																								timeToLiveSeconds   = "1200"
+																								overflowToDisk      = "false" />
+
+
+	<!-- Hibernate Entity Caches  -->
+
+	<cache name = "io.codelirium.workable.movierama.model.entity.MovieEntity" 					eternal             = "false"
+																								maxElementsInMemory = "50000"
+																								timeToLiveSeconds   = "600"
+																								timeToIdleSeconds   = "0"
+																								overflowToDisk      = "false" />
+
+	<cache name = "io.codelirium.workable.movierama.model.entity.RatingEntity" 					eternal             = "false"
+																								maxElementsInMemory = "50000"
+																								timeToLiveSeconds   = "600"
+																								timeToIdleSeconds   = "0"
+																								overflowToDisk      = "false" />
+
+</ehcache>

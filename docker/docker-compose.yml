@@ -1,0 +1,25 @@
+version: '2'
+services:
+    movierama-recommendation-service:
+        container_name: movierama-recommendation-service
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile
+        image: movierama-recommendation-service
+        ports:
+            - "8080:8080"
+        depends_on:
+            - postgres
+    postgres:
+        container_name: postgres
+        image: postgres
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_DB=movierama-db
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=password
+        volumes:
+            - ../sql/schema/TABLES.sql:/docker-entrypoint-initdb.d/1-TABLES.sql
+            - ../sql/schema/DATA-MOVIES.sql:/docker-entrypoint-initdb.d/2-DATA-MOVIES.sql
+            - ../sql/schema/DATA-RATINGS.sql:/docker-entrypoint-initdb.d/3-DATA-RATINGS.sql
