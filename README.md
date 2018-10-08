@@ -1,4 +1,4 @@
-# ovierama
+# movierama
 
 A movie recommendation system in the form of an API. It contains the implementation of a User/User collaborative filtering algorithm to recommend movies.
 
