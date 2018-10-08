@@ -37,4 +37,19 @@
 																								timeToIdleSeconds   = "0"
 																								overflowToDisk      = "false" />
 
+
+	<!-- Other Caches -->
+
+	<cache name = "avg-rating-by-user"															eternal             = "false"
+																								maxElementsInMemory = "50000"
+																								timeToLiveSeconds   = "600"
+																								timeToIdleSeconds   = "0"
+																								overflowToDisk      = "false" />
+
+	<cache name = "rating-by-user-and-movie"													eternal             = "false"
+																								maxElementsInMemory = "50000"
+																								timeToLiveSeconds   = "600"
+																								timeToIdleSeconds   = "0"
+																								overflowToDisk      = "false" />
+
 </ehcache>

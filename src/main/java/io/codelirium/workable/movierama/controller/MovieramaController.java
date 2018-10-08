@@ -167,13 +167,14 @@ public class MovieramaController {
 	})
 	@ResponseStatus(OK)
 	@RequestMapping(value = API_ENDPOINT_GET_RECOMMENDED_MOVIES, method = GET, produces = APPLICATION_JSON_VALUE)
-	public @ResponseBody ResponseEntity<RESTSuccessResponseBody<MovieDTO>> getRecommended(@PathVariable(PATH_PARAM_USER_ID) final int userId) {
+	public @ResponseBody ResponseEntity<RESTSuccessResponseBody<MovieDTO>> getRecommended(@PathVariable(PATH_PARAM_USER_ID) final int userId,
+																						  @PathVariable(PATH_PARAM_MAX_RECOMMENDATIONS) final int maxSize) {
 
 		Collection<MovieDTO> recommendations;
 
 		try {
 
-			recommendations = movieramaService.getRecommendedMovies(userId);
+			recommendations = movieramaService.getRecommendedMovies(userId, maxSize);
 
 		} catch (final Exception e) {
 

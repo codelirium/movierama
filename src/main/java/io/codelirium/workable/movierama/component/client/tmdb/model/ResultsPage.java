@@ -1,4 +1,4 @@
-package io.codelirium.workable.movierama.component.client.model;
+package io.codelirium.workable.movierama.component.client.tmdb.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

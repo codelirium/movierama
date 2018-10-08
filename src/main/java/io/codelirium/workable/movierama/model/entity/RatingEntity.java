@@ -23,6 +23,8 @@ public class RatingEntity extends PersistableBaseEntity<Long> implements Seriali
 
 	private static final long serialVersionUID = -2589170530443760063L;
 
+	public static final int MAX_RATING_SCORE = 5;
+
 
 	static final String TABLE_NAME           = "RATINGS";
 	static final String COLUMN_NAME_ID       = "ID";

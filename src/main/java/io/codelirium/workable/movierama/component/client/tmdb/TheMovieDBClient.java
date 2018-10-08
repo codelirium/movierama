@@ -1,6 +1,7 @@
-package io.codelirium.workable.movierama.component.client;
+package io.codelirium.workable.movierama.component.client.tmdb;
 
-import io.codelirium.workable.movierama.component.client.model.ResultsPage;
+import io.codelirium.workable.movierama.component.client.ExternalMovieAPIClient;
+import io.codelirium.workable.movierama.component.client.tmdb.model.ResultsPage;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -22,7 +23,7 @@ import static org.springframework.util.Assert.notNull;
 
 @Component
 @EnableRetry
-public class TheMovieDBClient {
+public class TheMovieDBClient implements ExternalMovieAPIClient {
 
 	private static final Logger LOGGER = getLogger(TheMovieDBClient.class);
 
@@ -60,6 +61,7 @@ public class TheMovieDBClient {
 	}
 
 
+	@Override
 	@SuppressWarnings("unchecked")
 	@Retryable(value = { RestClientResponseException.class }, maxAttempts = 15, backoff = @Backoff(delay = 2000))
 	public String getMovieDescription(final String movieTitle) throws UnsupportedEncodingException {
