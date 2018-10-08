@@ -30,7 +30,7 @@ Endpoints
 * A user can retriece a number of movie recommendations.
   * **GET** `http://localhost:8080/users/1/movies/recommendations/5`
 
-
+**NOTE:** The movie descriptions are consumed from the external API: `https://api.themoviedb.org`.
 
 Data
 -
