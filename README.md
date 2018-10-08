@@ -7,7 +7,7 @@ A movie recommendation system in the form of an API. It contains the implementat
 Instructions
 -
 
-The `docker-compose` command will automatically bring up a postgres server, load it with data and finally bring up the movierama service.
+The `docker-compose` command will automatically bring up a `postgres` server, load it with data and finally bring up the movierama service.
 
 
 * **Compile:** `$ mvn clean package`
