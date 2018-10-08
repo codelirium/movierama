@@ -47,4 +47,6 @@ The `ratings.csv` and `movies.csv` have been preprocessed with the scripts locat
 
 The SQL statements which are produced by these two scripts and that populate the DB are located at `sql/schema/DATA-[MOVIES|RATINGS].sql`.
 
-The DB schema is located at `sql/schema/TABLES.sql`
+The DB schema is located at `sql/schema/TABLES.sql`.
+
+All schema and data all loaded automatically with the `docker-compose` command.
