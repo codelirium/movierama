@@ -28,7 +28,6 @@ public class TheMovieDBClient implements ExternalMovieAPIClient {
 	private static final Logger LOGGER = getLogger(TheMovieDBClient.class);
 
 
-	public  static final String MSG_UNAVAILABLE = "Unavailable.";
 	private static final String FIELD_OVERVIEW = "overview";
 
 

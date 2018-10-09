@@ -1,5 +1,6 @@
 package io.codelirium.workable.movierama.service;
 
+import io.codelirium.workable.movierama.component.client.ExternalMovieAPIClient;
 import io.codelirium.workable.movierama.component.client.tmdb.TheMovieDBClient;
 import io.codelirium.workable.movierama.component.recommendation.RecommendationEngine;
 import io.codelirium.workable.movierama.model.dto.MovieDTO;
@@ -15,7 +16,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import static io.codelirium.workable.movierama.model.entity.RatingEntity.MAX_RATING_SCORE;
-import static io.codelirium.workable.movierama.util.client.MovieDescriptionFetcher.*;
+import static io.codelirium.workable.movierama.util.client.MovieDescriptionFetcher.getMovieDescription;
 import static io.codelirium.workable.movierama.util.pagination.PaginationUtil.feedPageInfo;
 import static io.codelirium.workable.movierama.util.pagination.PaginationUtil.makePageRequest;
 import static java.util.stream.Collectors.toCollection;
@@ -30,16 +31,16 @@ public class MovieramaService {
 
 	private RatingRepository ratingRepository;
 
-	private TheMovieDBClient theMovieDBClient;
+	private ExternalMovieAPIClient theMovieDBClient;
 
 	private RecommendationEngine recommendationEngine;
 
 
 	@Inject
-	public MovieramaService(final MovieRepository      movieRepository,
-							final RatingRepository     ratingRepository,
-							final TheMovieDBClient     theMovieDBClient,
-							final RecommendationEngine recommendationEngine) {
+	public MovieramaService(final MovieRepository        movieRepository,
+							final RatingRepository       ratingRepository,
+							final ExternalMovieAPIClient theMovieDBClient,
+							final RecommendationEngine   recommendationEngine) {
 
 		this.movieRepository      = movieRepository;
 		this.ratingRepository     = ratingRepository;

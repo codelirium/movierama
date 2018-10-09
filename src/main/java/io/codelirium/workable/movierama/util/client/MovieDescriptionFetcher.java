@@ -2,7 +2,7 @@ package io.codelirium.workable.movierama.util.client;
 
 import io.codelirium.workable.movierama.component.client.ExternalMovieAPIClient;
 
-import static io.codelirium.workable.movierama.component.client.tmdb.TheMovieDBClient.MSG_UNAVAILABLE;
+import static io.codelirium.workable.movierama.component.client.ExternalMovieAPIClient.MSG_UNAVAILABLE;
 import static org.springframework.util.Assert.notNull;
 
 

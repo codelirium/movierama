@@ -1,6 +1,6 @@
 package io.codelirium.workable.movierama.component.recommendation;
 
-import io.codelirium.workable.movierama.component.client.tmdb.TheMovieDBClient;
+import io.codelirium.workable.movierama.component.client.ExternalMovieAPIClient;
 import io.codelirium.workable.movierama.model.dto.MovieDTO;
 import io.codelirium.workable.movierama.model.entity.MovieEntity;
 import io.codelirium.workable.movierama.model.entity.RatingEntity;
@@ -32,7 +32,7 @@ public class RecommendationEngine {
 
 	private UserProfiler userProfiler;
 
-	private TheMovieDBClient theMovieDBClient;
+	private ExternalMovieAPIClient theMovieDBClient;
 
 	private MovieRepository movieRepository;
 
@@ -41,7 +41,7 @@ public class RecommendationEngine {
 
 	@Inject
 	public RecommendationEngine(final UserProfiler     userProfiler,
-								final TheMovieDBClient theMovieDBClient,
+								final ExternalMovieAPIClient theMovieDBClient,
 								final MovieRepository  movieRepository,
 								final RatingRepository ratingRepository) {
 
