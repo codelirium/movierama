@@ -14,6 +14,7 @@ import java.util.*;
 
 import static com.google.common.collect.Lists.newLinkedList;
 import static com.google.common.collect.Maps.newHashMap;
+import static com.google.common.collect.Maps.newTreeMap;
 import static io.codelirium.workable.movierama.model.entity.RatingEntity.MAX_RATING_SCORE;
 import static io.codelirium.workable.movierama.util.client.MovieDescriptionFetcher.getMovieDescription;
 import static java.lang.Math.abs;
@@ -135,7 +136,7 @@ public class RecommendationEngine {
 		}
 
 
-		final Map<Long, Double> recommendationsSorted = new TreeMap<>(new MapValueComparator(predictedRatings));
+		final Map<Long, Double> recommendationsSorted = newTreeMap(new MapValueComparator(predictedRatings));
 
 		recommendationsSorted.putAll(predictedRatings);
 
