@@ -49,4 +49,4 @@ The SQL statements which are produced by these two scripts and that populate the
 
 The DB schema is located at `sql/schema/TABLES.sql`.
 
-All schema and data all loaded automatically with the `docker-compose` command.
+All schema and data are loaded automatically with the `docker-compose` command.
